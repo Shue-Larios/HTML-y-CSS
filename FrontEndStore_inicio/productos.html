@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FronEnd Store</title>
+
+    <!--  normaliza que todos los elementos se vean consistentes en todos los navegadores tiene que ser el primero q se inicialice -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!--  conecta con fuente de texto externa google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <!--  preload  que cargue la hoja de estilo lo mas rapido que pueda   -->
+    <link rel="preload" href="css/style.css" as="style">
+    <!--  uniendo la hoja css en esta pagina hmtl -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <header class="header"> <!-- nombramos el bloque de una sola palabra (BEM)-->
+        <a href="index.html"> <img class="header__logo" src="img/logo.png" alt="Logotipo"> </a> <!-- header__logo es el elementos de (BEM)-->
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace " href="index.html">Tienda</a>
+        <a class="navegacion__enlace navegacion__enlace--activo"  href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main>
+        <h1>React js</h1>
+<div class="camisa">
+    <img class="camisa__imagen" src="img/3.jpg" alt="">
+        <div class="camisa__contenido">
+            <p> commodo varius lorem in elementum. Fusce ut libero placerat, interdum nunc eu, viverra felis. Curabitur tempor viverra nisi, ut laoreet orci. Pellentesque massa nibh, sagittis nec malesuada molestie, sodales eget dui. Vivamus at ex laoreet ligula efficitur gravida non sit amet dui. Nulla ut mi pulvinar, porta arcu quis, consectetur eros. Aliquam sem lacus, facilisis et auctor ut, rhoncus non urna. Curabitur tristique a velit eget maximus.</p>
+
+                <form class="formulario" action="">
+                     <select class="formulario__campo" name="" id="">
+                              <option disabled selected value="">-- Seleccionar Talla --</option> <!--- indica que esta seleccionado pero deshabilitado-->
+                                <option value="">Pequeña</option>
+                                 <option value="">Mediana</option>
+                                 <option value="">Grande</option>
+                    </select>
+                            <input class="formulario__campo" type="number" placeholder="Cantidad" min="1"> <!-- texto tipo numero con la cantidad minima de 1 y maximo de 10-->
+                            <input class="formulario__submit" type="submit" value="Agregar al Carrito"> <!--est submit ejecuta todo el codigo ingresado en el formulario-->
+                </form>
+        </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos los derechos reservados.</p>
+        </footer>
+</body>
+
+</html>

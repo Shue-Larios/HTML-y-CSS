@@ -1,0 +1,384 @@
+        /*  son elementos que no existenen el html haciendo una paleta de colores q vamos a usar*/
+        
+         :root {
+            --blanco: #ffffff;
+            --oscuro: #212121;
+            --primario: #ffc107;
+            --secundario: #0097a7;
+            --gris: #757575;
+        }
+        /* estas dos lineas ayudar adaptar mas la pagina a los dispositivos y se utiliza el metodo rem para el tamaño */
+        
+        html {
+            /*  reiniciamos el tamaño y nos da la posibilidad de usar los rem */
+            font-size: 62.5%;
+            box-sizing: border-box;
+            scroll-snap-type: y mandatory;
+            /* para el efecto que cuando le dan para abajo muestra una parte de forma automatica y lleva "Y" por los ejer "X" y "Y" */
+        }
+        
+
+
+        .servicio,
+        .nav_principal,
+        .formulario {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            /* hace que el scroll se fuerce a detenerse ahi */
+        }
+        /* primer * selecciona todos los elementos del html,   */
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        body {
+            font-family: 'Krub', sans-serif;
+            background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+            /*  linea para degradado to top indica que va de abajo hacia arriba primer color el de abajo el otro el primero */
+        }
+        /*   fin dos lineas */
+        
+        h1 {
+            font-size: 3.8rem;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            /* centra el texto*/
+            text-align: center;
+        }
+        
+        span {
+            /* tamaño de letra con */
+            font-size: 2rem;
+        }
+        
+        .contenedor {
+            /* 120px como maximo*/
+            max-width: 120rem;
+            /* margen arriba, derecha, abajo izquierda con un espacio basta, margen entre elementos*/
+            margin: 0 auto 0 auto;
+            color: black;
+        }
+        
+        .nav_bg {
+            /* color de fondo en todo el espacio disponible*/
+            background-color: var(--secundario);
+        }
+        
+        .nav_principal {
+            /* nos habilita flexbox */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* media Querias con tamaño para las tablet 768px, 480px para cel, 1140px para pc*/
+        
+        @media (min-width: 768px) {
+            .nav_principal {
+                /* aca reiniciamos la direccion del flex, las demas no se copian xk las lee primero y se queda con los valores anteriores y si lo queremos cambiar si lo metemos aca  */
+                flex-direction: row;
+                /*permite mover el contenido horizontalmente, space-between separa el contenido */
+                justify-content: space-between;
+            }
+        }
+        
+        .nav_principal a {
+            display: block;
+            /*se utiliza similar al margin con la definicion de datos, separacion del texto dentro del elemento*/
+            padding: 1.5rem;
+            color: var(--blanco);
+            /* elimina la linea de abajo de los link */
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        /* hover Elemento que se dispara cuando se coloca el mouse en el texto */
+        
+        .nav_principal a:hover {
+            background-color: var(--primario);
+            color: var(--oscuro)
+        }
+        
+        .hero {
+            /* propiedad para agregar imagenes via CSS */
+            /* dos puntos los utilizamos para retrceder una carpeta */
+            background-image: url(../img/hero.jpg);
+            /* para no repetir las imagenes */
+            background-repeat: no-repeat;
+            /* acopla la imagen a todo el tamaño posible */
+            background-size: cover;
+            height: 300px;
+            /* el padre siempre tiene que tener posicion relativa para el uso del posicionamiento del contenido-hero */
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .contenido-hero {
+            position: absolute;
+            /*  la transpariencia va de 0 hasta 1 por eso .5 */
+            background-color: rgb(0, 0, 0, .5);
+            width: 100%;
+            height: 100%;
+            /* colocando todas las letras del padre de izquierda a derecha */
+            display: flex;
+            /* organizando verticalmente */
+            flex-direction: column;
+            /* alinearias horizontalmente */
+            align-items: center;
+            /* alinearias verticalmente */
+            justify-content: center;
+        }
+        
+        .contenido-hero h2 {
+            Color: var(--blanco)
+        }
+        
+        .contenido-hero p {
+            Color: var(--blanco)
+        }
+        
+        .ubicacion {
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .boton {
+            background-color: var(--secundario);
+            color: var(--blanco);
+            padding: 1rem 3rem;
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-decoration: none;
+            /*  hace las lestras mayusculas */
+            text-transform: uppercase;
+            font-weight: bold;
+            /* para el borde del boton se vea redondo */
+            border-radius: 10rem;
+            width: 90%;
+            text-align: center;
+            border: none
+        }
+        
+        @media (min-width: 768px) {
+            .boton {
+                /*  reiniciamos el tamaño del boton para pantallas */
+                width: auto;
+            }
+        }
+        
+        .boton:hover {
+            /*  pone la manica en el boton de abajo */
+            cursor: pointer;
+        }
+        /* codigo sacado de la pagina https://cssmatic.com/box-shadow */
+        
+        .sombra {
+            -webkit-box-shadow: 0px 5px 15px 6px rgba(82, 81, 82, 0.78);
+            -moz-box-shadow: 0px 5px 15px 6px rgba(82, 81, 82, 0.78);
+            box-shadow: 0px 5px 15px 6px rgba(82, 81, 82, 0.78); /* para hacer un cuadro con iluminacion en la orilla */
+            background-color: var(--blanco);
+            padding: 2rem;
+            border-radius: 2rem; /* darle un borde */
+        }
+        
+        @media (min-width: 768px) {
+            .servicios {
+                display: grid;
+                /* habilita las propiedadesdel grid */
+                grid-template-columns: 33.33% 33.33% 33.33%;
+                /* aca definimos dos columnas de 300px */
+                column-gap: 1rem;
+            }
+        }
+        
+        .servicio {
+            /*  para centrar los circulos vamos al padre q es .servicio */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .servicio h3 {
+            color: var(--secundario);
+        }
+        
+        .servicio p {
+            line-height: 2;
+            /* permite un interlineado */
+            font-weight: bolder;
+            text-align: center;
+        }
+        
+        .servicio .iconos {
+            height: 15rem;
+            /* sacamos el cuadrado */
+            width: 15rem;
+            background-color: var(--primario);
+            /* color del cuadrado */
+            border-radius: 50%;
+            /*  para dar un circulo exacto */
+            display: flex;
+            /* habilitamos las opciones de flex */
+            justify-content: space-evenly;
+            /* nos hace una mejor vista de los dos iconos de apple y andorid */
+            align-items: center;
+            /*nos centra los iconos */
+        }
+        
+        .formulario {
+            background-color: var(--gris);
+            width: min( 60rem, 100%);
+            /* utiliza el valor mas pequeñoayuda con el diseño adaptable */
+            margin: auto;
+            /* centra el formulario */
+            padding: 2rem;
+            border-radius: 2rem;
+        }
+        
+        .formulario fieldset {
+            /* eliminando el borde del fieldset */
+            border: none;
+        }
+        
+        .formulario legend {
+            text-align: center;
+            color: var(--primario);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px){
+            .contenedor-campo {
+                display: grid;
+                grid-template-columns: 50% 50% ; /* dos espacios del 50% */
+                column-gap: 1rem; /* separacion de columnas */
+            } 
+        }
+        .contenedor-campo :nth-child(3),/* selecciona varios que tengan el mismo nombre en este caso campo dentro del parentecis que numero de los varios elijes */ 
+        .contenedor-campo :nth-child(4)      {
+            grid-column: 1 / 3 ; /* esto dice de la columna 1 hasta la 3 */
+}
+
+
+
+        
+        .campo {
+            margin-bottom: 1rem;
+        }
+        
+        .campo label {
+            color: var(--blanco);
+            font-weight: bold;
+            margin-bottom: .5rem;
+            display: block;
+        }
+        
+        .input-text {
+            width: 100%;
+            /* para que tome todo el espacio disponible */
+            border: none;
+            padding: 1.5rem;
+            /* para verel input mas grande */
+            border-radius: 2rem;
+        }
+        /* modifica el tamaño del boton de abajo se hixo porque est boton utilizaba la misma clase q el d arriba */
+        
+        .enviar .boton {
+            width: 100%;
+        }
+
+        .campo textarea{
+            height: 20rem; /* altura del textarea */
+          
+        }
+        .footer{
+           text-align: center;
+        }
+/*  icono de redes sociales */
+
+  
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .sociales {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15vh;
+            /* background: white; quito el cuadro de al rededor */
+        }
+    
+        ul {
+            position: relative;
+            display: flex;
+        }
+        ul li {
+            position: relative;
+            list-style: none;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        ul li a {
+            text-decoration: none;
+        }
+        ul li a .fa-brands {
+            margin-top: 10%;
+            font-size: 6em;
+            color: #808080;
+        }
+        ul li a::before {
+            font-family: "FontAwesome";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 6em;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        ul li:nth-child(1) a::before {
+            content: "\f099";    
+            color: #1DA1F2;
+            border-bottom: 4px solid #1DA1F2;
+        }
+    
+        ul li:nth-child(3) a::before {
+            content: "\f16d";
+            background-image: linear-gradient(45deg, 
+              #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,
+              #bc1888 100%);
+            -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+            border-bottom: 4px solid #dc2743;
+        }
+        ul li:nth-child(2) a::before {
+            content: "\f232";
+            color: #25D366;
+            border-bottom: 4px solid #25D366;
+        }
+        ul li:nth-child(4) a::before {
+            /* content: "\f099"; */
+            content: "\f09a";     
+            color: #1DA1F2;
+            border-bottom: 4px solid #1DA1F2;
+        }
+        ul li:hover a::before {
+            height: 100%;
+        }

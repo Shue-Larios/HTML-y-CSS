@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Menu</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- la hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navegacion">
+        <ul>
+            <li class="lista activo" data-color="#f53b57">
+                <a href="#">
+                    <span class="icono"><i class="fa fa-home"></i></span>
+                    <span class="titulo">Inicio</span>
+                </a>
+            </li>
+            <li class="lista" data-color="#3c40c6">
+                <a href="#">
+                    <span class="icono"><i class="fa fa-user"></i></span>
+                    <span class="titulo">Perfil</span>
+                </a>
+            </li>
+            <li class="lista" data-color="#05c46b">
+                <a href="#">
+                    <span class="icono"><i class="fa fa-comment"></i></span>
+                    <span class="titulo">Mensajes</span>
+                </a>
+            </li>
+            <li class="lista" data-color="#0fbcf9">
+                <a href="#">
+                    <span class="icono"><i class="fa fa-question-circle"></i></span>
+                    <span class="titulo">Ayuda</span>
+                </a>
+            </li>
+            <li class="lista" data-color="#ffa801">
+                <a href="#">
+                    <span class="icono"><i class="fa fa-cog"></i></span>
+                    <span class="titulo">ConfigurarS</span>
+                </a>
+            </li>
+            <div class="indicador"></div>
+        </ul>
+    </div>
+    <script>
+        let lista = document.querySelectorAll('.lista');
+        for (let i = 0; i < lista.length; i++) {
+            lista[i].onmouseover = function () {
+                let j = 0;
+                while (j < lista.length) {
+                    lista[j++].className = 'lista';
+                }
+                lista[i].className = 'lista activo';
+            }
+        }
+
+        // lista.forEach(elemens => {
+        //     elemens.addEventListener("mouseenter", function (event) {
+        //         let bg = document.querySelector('body');
+        //         let color = event.target.getAttribute('data-color');
+        //         bg.style.backgroundColor = color;
+        //     })
+        // })
+    </script>
+</body>
+
+</html>
